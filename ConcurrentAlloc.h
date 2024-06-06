@@ -21,11 +21,11 @@ void* ConcurrentAlloc(size_t size) {
     } else {
         // 直接new，因为TLS，所以不存在竞争问题
         if (pTLSThreadCache == nullptr) {
-//            static ObjectPool<ThreadCache> objPool;
-//            objPool.Lock();
-            pTLSThreadCache = new ThreadCache;
-//            pTLSThreadCache = objPool.New();
-//            objPool.UnLock();
+            static ObjectPool<ThreadCache> objPool;
+            objPool.Lock();
+//            pTLSThreadCache = new ThreadCache;
+            pTLSThreadCache = objPool.New();
+            objPool.UnLock();
         }
         // 此时，每个线程都有了一个ThreadCache对象
 

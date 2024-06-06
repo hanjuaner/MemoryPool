@@ -82,8 +82,8 @@ PageCache::NewSpan(size_t k) {
     // 情况4
     if (k > NPAGES - 1) {
         void *ptr = SystemAlloc(k);
-        Span *span = new Span;
-//        Span *span = _spanPool.New();
+//        Span *span = new Span;
+        Span *span = _spanPool.New();
         span->_pageid = ((PageID) ptr) >> PAGE_SHIFT;
         span->_npage = k;
         _idspanmap[span->_pageid] = span;
@@ -104,8 +104,8 @@ PageCache::NewSpan(size_t k) {
     for (size_t i = k + 1; i < NPAGES; ++i) {
         if (!_spanlist[i].Empty()) {
             Span *nSpan = _spanlist[i].PopFront();
-            Span *kSpan = new Span;
-//            Span *kSpan = _spanPool.New();
+//            Span *kSpan = new Span;
+            Span *kSpan = _spanPool.New();
 
             kSpan->_pageid = nSpan->_pageid;
             kSpan->_npage = k;
@@ -130,8 +130,8 @@ PageCache::NewSpan(size_t k) {
 
     // 情况3
     void *ptr = SystemAlloc(NPAGES - 1);
-    Span *bigSpan = new Span;
-//    Span *bigSpan = _spanPool.New();
+//    Span *bigSpan = new Span;
+    Span *bigSpan = _spanPool.New();
     bigSpan->_pageid = (((PageID) ptr) >> PAGE_SHIFT);
     bigSpan->_npage = NPAGES - 1;
     _spanlist[bigSpan->_npage].PushFront(bigSpan);
@@ -161,8 +161,8 @@ PageCache::ReleaseSpanToPageCache(Span *span) {
     if (span->_npage > NPAGES - 1) {
         void *ptr = (void *) (span->_pageid << PAGE_SHIFT);
         SystemFree(ptr);
-        delete span;
-//        _spanPool.Delete(span);
+//        delete span;
+        _spanPool.Delete(span);
         return;
     }
     // 向左不断合并
@@ -188,8 +188,8 @@ PageCache::ReleaseSpanToPageCache(Span *span) {
         span->_npage += leftSpan->_npage;
         span->_pageid = leftSpan->_pageid;
         _spanlist[leftSpan->_npage].Erase(leftSpan);
-        delete leftSpan;
-//        _spanPool.Delete(leftSpan);
+//        delete leftSpan;
+        _spanPool.Delete(leftSpan);
     }
     // 向右不断合并
     while (1) {
@@ -213,8 +213,8 @@ PageCache::ReleaseSpanToPageCache(Span *span) {
         // 合并
         span->_npage += rightSpan->_npage;
         _spanlist[rightSpan->_npage].Erase(rightSpan);
-        delete rightSpan;
-//        _spanPool.Delete(rightSpan);
+//        delete rightSpan;
+        _spanPool.Delete(rightSpan);
     }
 
     // 合并完成，将当前span挂到桶中

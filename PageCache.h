@@ -46,7 +46,7 @@ private:
     SpanList _spanlist[NPAGES];
     std::mutex _pageMtx;
     std::unordered_map<PageID, Span *> _idspanmap;
-//    ObjectPool<Span> _spanPool;
+    ObjectPool<Span> _spanPool;
 };
 
 #endif //MEMORY_POOL_PAGECACHE_H
