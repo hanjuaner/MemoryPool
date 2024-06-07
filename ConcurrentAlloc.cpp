@@ -3,6 +3,7 @@
 void* ConcurrentAlloc(size_t size) {
     // cout << std::this_thread::get_id() << " " << pTLSThreadCache << endl;
     if (size > MAX_BYTES) {
+        // 直接向os申请
         size_t pageNum = (SizeClass::RoundUp(size)) >> PAGE_SHIFT;
 
         PageCache::GetInstance()->Lock();

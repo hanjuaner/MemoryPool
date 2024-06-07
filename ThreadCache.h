@@ -6,7 +6,7 @@
 class ThreadCache {
 
 private:
-    FreeList _freelist[NLISTS];//自由链表
+    FreeList _freelist[NLISTS];   //tc自由链表
 
 public:
     //申请和释放size大小对象

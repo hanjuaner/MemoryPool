@@ -1,6 +1,7 @@
 #include "CentralCache.h"
 #include "PageCache.h"
 
+// 单例
 CentralCache CentralCache::_inst;
 
 // 让cc拿到一个spanlist下非空的span

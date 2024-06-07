@@ -3,7 +3,7 @@
 #include <sys/mman.h>
 #include <unistd.h>
 
-
+// 单例
 PageCache PageCache::_inst;
 
 // pc从自己的哈希桶中拿出来一个k页的span

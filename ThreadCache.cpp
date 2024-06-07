@@ -1,7 +1,7 @@
 #include "ThreadCache.h"
 #include "CentralCache.h"
 
-// 申请内存
+// tc申请内存
 void *
 ThreadCache::Allocate(size_t size) {
     assert (size <= MAX_BYTES);
@@ -22,7 +22,7 @@ ThreadCache::Allocate(size_t size) {
     }
 }
 
-// 释放内存
+// tc释放内存
 void
 ThreadCache::Deallocate(void *ptr, size_t size) {
     assert (size <= MAX_BYTES);
@@ -41,7 +41,7 @@ ThreadCache::Deallocate(void *ptr, size_t size) {
     }
 }
 
-// 从中心缓存获取对象
+// tc从cc获取对象
 void *
 ThreadCache::FetchFromCentralCache(size_t index, size_t size) {
     // 通过MaxSize和NumMoveSize来控制每次从中心缓存获取的内存对象个数
@@ -71,7 +71,7 @@ ThreadCache::FetchFromCentralCache(size_t index, size_t size) {
     }
 }
 
-// 释放对象时，链表过长时，回收内存回到中心堆
+// tc释放对象链表过长时，回收到tc
 void ThreadCache::ListTooLong(FreeList *freelist, size_t size) {
     void *start = nullptr;
     void *end = nullptr;

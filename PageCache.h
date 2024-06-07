@@ -3,9 +3,8 @@
 
 #include "common.h"
 
-// Page Cache:
+// Page Cache:单例饿汉
 // 单例：Central Cache获取span的时候，每次都是从同一个page数组中获取span
-// 饿汉
 class PageCache {
 public:
     static PageCache *GetInstance() {

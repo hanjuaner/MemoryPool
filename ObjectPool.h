@@ -6,6 +6,7 @@
 using std::cout;
 using std::endl;
 
+// 定长内存池
 template<class T>
 class ObjectPool {
 private:
