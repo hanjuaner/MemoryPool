@@ -208,16 +208,16 @@ public:
         _head->_prev = _head;
     }
 
-    ~SpanList() {
-        Span *cur = _head->_next;
-        while (cur != _head) {
-            Span *next = cur->_next;
-            delete cur;
-            cur = next;
-        }
-        delete _head;
-        _head = nullptr;
-    }
+//    ~SpanList() {
+//        Span *cur = _head->_next;
+//        while (cur != _head) {
+//            Span *next = cur->_next;
+//            delete cur;
+//            cur = next;
+//        }
+//        delete _head;
+//        _head = nullptr;
+//    }
 
     // 锁死拷贝
     SpanList(const SpanList &) = delete;

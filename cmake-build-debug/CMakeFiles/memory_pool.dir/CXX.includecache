@@ -40,6 +40,12 @@ unistd.h
 common.h
 /home/fhk/cppProject/ConcurrentMemoryPool/common.h
 
+/home/fhk/cppProject/ConcurrentMemoryPool/ThreadCache.cpp
+ThreadCache.h
+/home/fhk/cppProject/ConcurrentMemoryPool/ThreadCache.h
+CentralCache.h
+/home/fhk/cppProject/ConcurrentMemoryPool/CentralCache.h
+
 /home/fhk/cppProject/ConcurrentMemoryPool/ThreadCache.h
 common.h
 /home/fhk/cppProject/ConcurrentMemoryPool/common.h
