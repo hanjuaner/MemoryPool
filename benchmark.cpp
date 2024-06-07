@@ -4,8 +4,6 @@
 一种是申请ntimes*rounds次同一个块大小的空间，
 一种是申请ntimes*rounds次不同的块大小的空间*/
 
-/*下面的代码稍微过一眼就好*/
-
 #include <atomic>
 #include"ConcurrentAlloc.h"
 
