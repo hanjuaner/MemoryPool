@@ -27,7 +27,6 @@ CentralCache::GetOneSpan(SpanList &spanlist, size_t size) {
     PageCache::GetInstance()->Lock();
     Span *span = PageCache::GetInstance()->NewSpan(k);    // 此时的span还没有被划分
     span->_isUse = true;
-    span->_objsize = size;
     PageCache::GetInstance()->UnLock();
 
     // 划分span：
@@ -42,10 +41,12 @@ CentralCache::GetOneSpan(SpanList &spanlist, size_t size) {
     // 将这块划分好的空间放到span的_freeList中
     char *start = (char *) (span->_pageid << PAGE_SHIFT);
     char *end = (char *) (start + (span->_npage << PAGE_SHIFT));
+    span->_objsize = size;
     span->_list = start;
     void *tail = start;
 
     start += size;
+
     while (start < end) {
         NEXT_OBJ(tail) = start;
         start += size;

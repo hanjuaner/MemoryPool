@@ -150,6 +150,33 @@ CentralCache.cpp.s:
 	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/CentralCache.cpp.s
 .PHONY : CentralCache.cpp.s
 
+ConcurrentAlloc.o: ConcurrentAlloc.cpp.o
+
+.PHONY : ConcurrentAlloc.o
+
+# target to build an object file
+ConcurrentAlloc.cpp.o:
+	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o
+.PHONY : ConcurrentAlloc.cpp.o
+
+ConcurrentAlloc.i: ConcurrentAlloc.cpp.i
+
+.PHONY : ConcurrentAlloc.i
+
+# target to preprocess a source file
+ConcurrentAlloc.cpp.i:
+	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.i
+.PHONY : ConcurrentAlloc.cpp.i
+
+ConcurrentAlloc.s: ConcurrentAlloc.cpp.s
+
+.PHONY : ConcurrentAlloc.s
+
+# target to generate assembly for a file
+ConcurrentAlloc.cpp.s:
+	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.s
+.PHONY : ConcurrentAlloc.cpp.s
+
 PageCache.o: PageCache.cpp.o
 
 .PHONY : PageCache.o
@@ -231,6 +258,33 @@ UnitTest.cpp.s:
 	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/UnitTest.cpp.s
 .PHONY : UnitTest.cpp.s
 
+benchmark.o: benchmark.cpp.o
+
+.PHONY : benchmark.o
+
+# target to build an object file
+benchmark.cpp.o:
+	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/benchmark.cpp.o
+.PHONY : benchmark.cpp.o
+
+benchmark.i: benchmark.cpp.i
+
+.PHONY : benchmark.i
+
+# target to preprocess a source file
+benchmark.cpp.i:
+	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/benchmark.cpp.i
+.PHONY : benchmark.cpp.i
+
+benchmark.s: benchmark.cpp.s
+
+.PHONY : benchmark.s
+
+# target to generate assembly for a file
+benchmark.cpp.s:
+	$(MAKE) -f CMakeFiles/memory_pool.dir/build.make CMakeFiles/memory_pool.dir/benchmark.cpp.s
+.PHONY : benchmark.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -243,6 +297,9 @@ help:
 	@echo "... CentralCache.o"
 	@echo "... CentralCache.i"
 	@echo "... CentralCache.s"
+	@echo "... ConcurrentAlloc.o"
+	@echo "... ConcurrentAlloc.i"
+	@echo "... ConcurrentAlloc.s"
 	@echo "... PageCache.o"
 	@echo "... PageCache.i"
 	@echo "... PageCache.s"
@@ -252,6 +309,9 @@ help:
 	@echo "... UnitTest.o"
 	@echo "... UnitTest.i"
 	@echo "... UnitTest.s"
+	@echo "... benchmark.o"
+	@echo "... benchmark.i"
+	@echo "... benchmark.s"
 .PHONY : help
 
 

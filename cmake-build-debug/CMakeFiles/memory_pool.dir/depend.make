@@ -7,6 +7,13 @@ CMakeFiles/memory_pool.dir/CentralCache.cpp.o: ../ObjectPool.h
 CMakeFiles/memory_pool.dir/CentralCache.cpp.o: ../PageCache.h
 CMakeFiles/memory_pool.dir/CentralCache.cpp.o: ../common.h
 
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: ../ConcurrentAlloc.cpp
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: ../ConcurrentAlloc.h
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: ../ObjectPool.h
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: ../PageCache.h
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: ../ThreadCache.h
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: ../common.h
+
 CMakeFiles/memory_pool.dir/PageCache.cpp.o: ../ObjectPool.h
 CMakeFiles/memory_pool.dir/PageCache.cpp.o: ../PageCache.cpp
 CMakeFiles/memory_pool.dir/PageCache.cpp.o: ../PageCache.h
@@ -24,4 +31,11 @@ CMakeFiles/memory_pool.dir/UnitTest.cpp.o: ../PageCache.h
 CMakeFiles/memory_pool.dir/UnitTest.cpp.o: ../ThreadCache.h
 CMakeFiles/memory_pool.dir/UnitTest.cpp.o: ../UnitTest.cpp
 CMakeFiles/memory_pool.dir/UnitTest.cpp.o: ../common.h
+
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: ../ConcurrentAlloc.h
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: ../ObjectPool.h
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: ../PageCache.h
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: ../ThreadCache.h
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: ../benchmark.cpp
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: ../common.h
 

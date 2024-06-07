@@ -18,7 +18,9 @@ find_package(Threads REQUIRED)
 add_executable(${CMAKE_PROJECT_NAME}
         ${SRC_FILES}
         ${HEAD_FILES}
-        ObjectPool.h
+        ConcurrentAlloc.cpp
+        #        ObjectPool.h
+#        benchmark.cpp
 )
 #引入依赖库
 target_link_libraries(${CMAKE_PROJECT_NAME} Threads::Threads)

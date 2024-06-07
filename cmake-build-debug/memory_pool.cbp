@@ -90,6 +90,9 @@
 		<Unit filename="/home/fhk/cppProject/ConcurrentMemoryPool/CentralCache.h">
 			<Option target="memory_pool"/>
 		</Unit>
+		<Unit filename="/home/fhk/cppProject/ConcurrentMemoryPool/ConcurrentAlloc.cpp">
+			<Option target="memory_pool"/>
+		</Unit>
 		<Unit filename="/home/fhk/cppProject/ConcurrentMemoryPool/ConcurrentAlloc.h">
 			<Option target="memory_pool"/>
 		</Unit>
@@ -109,6 +112,9 @@
 			<Option target="memory_pool"/>
 		</Unit>
 		<Unit filename="/home/fhk/cppProject/ConcurrentMemoryPool/UnitTest.cpp">
+			<Option target="memory_pool"/>
+		</Unit>
+		<Unit filename="/home/fhk/cppProject/ConcurrentMemoryPool/benchmark.cpp">
 			<Option target="memory_pool"/>
 		</Unit>
 		<Unit filename="/home/fhk/cppProject/ConcurrentMemoryPool/common.h">

@@ -122,12 +122,14 @@ void BigAlloc()
     ConcurrentFree(p2);
 }
 
-int main() {
-    // AllocTest();
-    // ConcurrentAllocTest1();
-    // ConcurrentAllocTest2();
-    // TestConcurrentFree1();
-    // TestMultiThread();
-    BigAlloc();
-    return 0;
-}
+
+
+//int main() {
+//    // AllocTest();
+//    // ConcurrentAllocTest1();
+//    // ConcurrentAllocTest2();
+//    TestConcurrentFree1();
+//    // TestMultiThread();
+//    // BigAlloc();
+//    return 0;
+//}

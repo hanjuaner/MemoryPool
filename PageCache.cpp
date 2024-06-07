@@ -6,66 +6,6 @@
 
 PageCache PageCache::_inst;
 
-//// 向系统申请获取大对象
-//Span *
-//PageCache::AllocBigPageObj(size_t size) {
-//    assert (size > MAX_BYTES);
-//
-//    size = SizeClass::_Roundup(size, PAGE_SHIFT); // 对齐
-//    size_t npage = size >> PAGE_SHIFT; // 页数
-//    if (npage < NPAGES) {
-//        Span *span = NewSpan(npage);
-//        span->_objsize = size;
-//        return span;
-//    } else {
-//        const size_t MMAP_THRESHOLD = 128 * 1024; // 128KB 阈值
-//        size_t memorySize = npage << PAGE_SHIFT;
-//        void *ptr = nullptr;
-//        if (memorySize < MMAP_THRESHOLD) {
-//            ptr = sbrk(memorySize);
-//            if (ptr == (void *) -1) {     // sbrk 返回的错误值是 (void*)-1
-//                ptr = nullptr;
-//            }
-//        } else {
-//            ptr = mmap(NULL, memorySize, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-//            if (ptr == MAP_FAILED) {
-//                ptr = nullptr;
-//            }
-//        }
-//
-//        if (ptr == nullptr)
-//            throw std::bad_alloc();
-//
-//
-//        Span *span = new Span;
-//        span->_objsize = npage << PAGE_SHIFT;
-//        span->_npage = npage;
-//        span->_pageid = (PageID) ptr >> PAGE_SHIFT;
-//        _idspanmap[span->_pageid] = span;
-//
-//        return span;
-//    }
-//}
-//
-//// 释放大对象
-//void
-//PageCache::FreeBigPageObj(void *ptr, Span *span) {
-//    size_t npage = span->_objsize >> PAGE_SHIFT;
-//    if (npage < NPAGES) {
-//        span->_objsize = 0;
-//        ReleaseSpanToPageCache(span);
-//    } else {
-//        _idspanmap.erase(span->_pageid);
-//        delete span;
-//        // ?
-//        if (span->_objsize < 128 * 1024) {
-//            sbrk(-span->_objsize);
-//        } else {
-//            munmap(ptr, npage << PAGE_SHIFT);
-//        }
-//    }
-//}
-
 // pc从自己的哈希桶中拿出来一个k页的span
 // k：申请的页数
 Span *
@@ -141,20 +81,6 @@ PageCache::NewSpan(size_t k) {
     return NewSpan(k);
 }
 
-//获取从对象到span的映射
-Span *
-PageCache::MapObjectToSpan(void *obj) {
-    PageID id = (((PageID) obj) >> PAGE_SHIFT);
-    std::unique_lock<std::mutex> lock(_pageMtx);          // 智能锁
-    auto it = _idspanmap.find(id);
-    if (it != _idspanmap.end()) {
-        return it->second;
-    } else {
-        assert(false);
-        return nullptr;
-    }
-}
-
 // 管理cc还回来的span
 void
 PageCache::ReleaseSpanToPageCache(Span *span) {
@@ -223,4 +149,18 @@ PageCache::ReleaseSpanToPageCache(Span *span) {
 
     _idspanmap[span->_pageid] = span;
     _idspanmap[span->_pageid + span->_npage - 1] = span;
+}
+
+//获取从对象到span的映射
+Span *
+PageCache::MapObjectToSpan(void *obj) {
+    PageID id = (((PageID) obj) >> PAGE_SHIFT);
+    std::unique_lock<std::mutex> lock(_pageMtx);          // 智能锁
+    auto it = _idspanmap.find(id);
+    if (it != _idspanmap.end()) {
+        return it->second;
+    } else {
+        assert(false);
+        return nullptr;
+    }
 }

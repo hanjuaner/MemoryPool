@@ -30,8 +30,9 @@ static const size_t PAGE_SHIFT = 13;
 static const size_t NPAGES = 129;
 
 // 访问和修改链表的指针
-inline static void *&NEXT_OBJ(void *obj) {    //返回类型是对 void* 类型的引用
-    return *((void **) obj);   //  将obj强转为void**类型（指向 void* 类型的指针），再解引用（访问指针所指向的地址上存储的值）这个类型的指针，得到void*类型的引用
+// 使内存块的开头包含一个指向下一个内存块的指针
+static void *&NEXT_OBJ(void *obj) {    //返回类型是对 void* 类型的引用
+    return *(void **) obj;   //  将obj强转为void**类型（指向 void* 类型的指针），再解引用（访问指针所指向的地址上存储的值）这个类型的指针，得到void*类型的引用
 }
 
 // 链表，用于存储内存对象

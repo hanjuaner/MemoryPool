@@ -70,9 +70,22 @@ CMakeFiles/memory_pool.dir/CentralCache.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/memory_pool.dir/CentralCache.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fhk/cppProject/ConcurrentMemoryPool/CentralCache.cpp -o CMakeFiles/memory_pool.dir/CentralCache.cpp.s
 
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: CMakeFiles/memory_pool.dir/flags.make
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o: ../ConcurrentAlloc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o -c /home/fhk/cppProject/ConcurrentMemoryPool/ConcurrentAlloc.cpp
+
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fhk/cppProject/ConcurrentMemoryPool/ConcurrentAlloc.cpp > CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.i
+
+CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fhk/cppProject/ConcurrentMemoryPool/ConcurrentAlloc.cpp -o CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.s
+
 CMakeFiles/memory_pool.dir/PageCache.cpp.o: CMakeFiles/memory_pool.dir/flags.make
 CMakeFiles/memory_pool.dir/PageCache.cpp.o: ../PageCache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/memory_pool.dir/PageCache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/memory_pool.dir/PageCache.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/memory_pool.dir/PageCache.cpp.o -c /home/fhk/cppProject/ConcurrentMemoryPool/PageCache.cpp
 
 CMakeFiles/memory_pool.dir/PageCache.cpp.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/memory_pool.dir/PageCache.cpp.s: cmake_force
 
 CMakeFiles/memory_pool.dir/ThreadCache.cpp.o: CMakeFiles/memory_pool.dir/flags.make
 CMakeFiles/memory_pool.dir/ThreadCache.cpp.o: ../ThreadCache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/memory_pool.dir/ThreadCache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/memory_pool.dir/ThreadCache.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/memory_pool.dir/ThreadCache.cpp.o -c /home/fhk/cppProject/ConcurrentMemoryPool/ThreadCache.cpp
 
 CMakeFiles/memory_pool.dir/ThreadCache.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/memory_pool.dir/ThreadCache.cpp.s: cmake_force
 
 CMakeFiles/memory_pool.dir/UnitTest.cpp.o: CMakeFiles/memory_pool.dir/flags.make
 CMakeFiles/memory_pool.dir/UnitTest.cpp.o: ../UnitTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/memory_pool.dir/UnitTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/memory_pool.dir/UnitTest.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/memory_pool.dir/UnitTest.cpp.o -c /home/fhk/cppProject/ConcurrentMemoryPool/UnitTest.cpp
 
 CMakeFiles/memory_pool.dir/UnitTest.cpp.i: cmake_force
@@ -109,23 +122,40 @@ CMakeFiles/memory_pool.dir/UnitTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/memory_pool.dir/UnitTest.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fhk/cppProject/ConcurrentMemoryPool/UnitTest.cpp -o CMakeFiles/memory_pool.dir/UnitTest.cpp.s
 
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: CMakeFiles/memory_pool.dir/flags.make
+CMakeFiles/memory_pool.dir/benchmark.cpp.o: ../benchmark.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/memory_pool.dir/benchmark.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/memory_pool.dir/benchmark.cpp.o -c /home/fhk/cppProject/ConcurrentMemoryPool/benchmark.cpp
+
+CMakeFiles/memory_pool.dir/benchmark.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/memory_pool.dir/benchmark.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fhk/cppProject/ConcurrentMemoryPool/benchmark.cpp > CMakeFiles/memory_pool.dir/benchmark.cpp.i
+
+CMakeFiles/memory_pool.dir/benchmark.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/memory_pool.dir/benchmark.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fhk/cppProject/ConcurrentMemoryPool/benchmark.cpp -o CMakeFiles/memory_pool.dir/benchmark.cpp.s
+
 # Object files for target memory_pool
 memory_pool_OBJECTS = \
 "CMakeFiles/memory_pool.dir/CentralCache.cpp.o" \
+"CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o" \
 "CMakeFiles/memory_pool.dir/PageCache.cpp.o" \
 "CMakeFiles/memory_pool.dir/ThreadCache.cpp.o" \
-"CMakeFiles/memory_pool.dir/UnitTest.cpp.o"
+"CMakeFiles/memory_pool.dir/UnitTest.cpp.o" \
+"CMakeFiles/memory_pool.dir/benchmark.cpp.o"
 
 # External object files for target memory_pool
 memory_pool_EXTERNAL_OBJECTS =
 
 memory_pool: CMakeFiles/memory_pool.dir/CentralCache.cpp.o
+memory_pool: CMakeFiles/memory_pool.dir/ConcurrentAlloc.cpp.o
 memory_pool: CMakeFiles/memory_pool.dir/PageCache.cpp.o
 memory_pool: CMakeFiles/memory_pool.dir/ThreadCache.cpp.o
 memory_pool: CMakeFiles/memory_pool.dir/UnitTest.cpp.o
+memory_pool: CMakeFiles/memory_pool.dir/benchmark.cpp.o
 memory_pool: CMakeFiles/memory_pool.dir/build.make
 memory_pool: CMakeFiles/memory_pool.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable memory_pool"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fhk/cppProject/ConcurrentMemoryPool/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable memory_pool"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/memory_pool.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
